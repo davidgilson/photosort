@@ -26,15 +26,15 @@ The script does not know where you store your photos, so you will have to move t
 
 *Example*
 
-`cd ~`
-
-`chmod +x photosort.sh`
-
-`cd ~/Dropbox/Camera\ Uploads`
-
-`~/./photosort.sh`
-
-`mv 2014/ ~/Photos/`
+> `cd ~`
+> 
+> `chmod +x photosort.sh`
+> 
+> `cd ~/Dropbox/Camera\ Uploads`
+> 
+> `~/./photosort.sh`
+> 
+> `mv 2014/ ~/Photos/`
 
 *Warning: This script should not be used in directories that do not contain photos of videos.*
 
