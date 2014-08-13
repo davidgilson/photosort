@@ -25,11 +25,11 @@ The script should **not** be in the same directory as the photos. It is better t
 The script does not know where you store your photos, so you will have to move the resulting directory tree to your photo archive.
 
 *Example*
-> `cd ~`
-> `chmod +x photosort.sh`
-> `cd ~/Dropbox/Camera\ Uploads`
-> `~/./photosort.sh`
-> `mv 2014/ ~/Photos/`
+`cd ~`
+`chmod +x photosort.sh`
+`cd ~/Dropbox/Camera\ Uploads`
+`~/./photosort.sh`
+`mv 2014/ ~/Photos/`
 
 *Warning: This script should not be used in directories that do not contain photos of videos.*
 
