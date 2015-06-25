@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Iterate through all files in directory and place images in directory based on date of capture.
-for f in *.*
+for f in *.{jpg,JPG,mp4,MP4}
 	do
 	# Extract image creation date
 	d=$(identify.exe -verbose "$f" | grep DateTimeOriginal | awk -F " " '{print $2}')
@@ -30,7 +30,7 @@ for dir in *-*-*
 	do
 	year=$(echo $dir | awk -F "-" '{print $1}')"/"
 	month=$(echo $dir | awk -F "-" '{print $2}')"/"
-	newdir=$year$month
+	newdir="Archive/"$year$month
 	if [ -n $newdir ]
 		then mkdir -p $newdir
 	fi
