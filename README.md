@@ -36,6 +36,6 @@ The script does not know where you store your photos, so you will have to move t
 > 
 > `mv 2014/ ~/Photos/`
 
-*Warning: This script should not be used in directories that do not contain photos of videos.*
+*Warning: This script should not be used in directories that do not contain photos or videos.*
 
 *I am not responsible for any loss of data incurred by using this script*
