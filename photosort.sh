@@ -1,6 +1,19 @@
 #!/bin/bash
 
 # Iterate through all files in directory and place images in directory based on date of capture.
+
+ file_count=$(ls -l *.{jpg,JPG,mp4,MP4} 2> /dev/null | wc -l)
+
+if ! [ $file_count -gt 0 ]
+	then
+	echo "No photos or videos to sort."
+	echo "Goodbye"
+	exit 1
+fi
+
+#Get rid of PNG files.
+rm *.{png,PNG}
+
 for f in *.{jpg,JPG,mp4,MP4}
 	do
 	# Extract image creation date
@@ -23,6 +36,11 @@ for f in *.{jpg,JPG,mp4,MP4}
 	mv -v "$f" "$dir"
 done
 
+# Clean up any videos that weren't processed in above loop.
+# Someday write something that will sort those videos!
+
+mv *.mp4 Archive/0-videos/
+
 # Create directory structure and organised sorted images.
 # E.g. ~/PhotoDir/ YYYY / MM / YYYY-MM-DD / *.jpg
 # I think this is self-explanatory.
@@ -34,6 +52,8 @@ for dir in *-*-*
 	if [ -n $newdir ]
 		then mkdir -p $newdir
 	fi
-	mv -v "$dir" "$newdir"
+	rsync -av $dir $newdir
+	rm -rf $dir
 done
 
+echo "Sorted "$file_count" files."
